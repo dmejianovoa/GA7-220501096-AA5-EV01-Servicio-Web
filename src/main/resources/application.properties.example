@@ -1,0 +1,10 @@
+spring.application.name=servicio-auth
+
+# Conexión a MySQL (base de datos independiente del proyecto Lion Warrior)
+spring.datasource.url=jdbc:mysql://localhost:3306/auth_db?serverTimezone=America/Bogota&allowPublicKeyRetrieval=true&useSSL=false
+spring.datasource.username=root
+spring.datasource.password=CONTRASENA12345 #ejemplo de contraseña
+
+# Hibernate crea/actualiza la tabla usuarios a partir de la entidad
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
