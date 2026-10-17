@@ -16,8 +16,8 @@ public class CredencialesDTO {
     private String user;
 
     // BCrypt solo procesa min 8 bytes, limite actual
-    @NotBlank(message = "El usuario es obligatorio")
-    @Size(min = 8, message = "la contraseña no puede ser menor de 8 caracteres")
+    @NotBlank(message = "La contraseña es obligatorio")
+    @Size(min = 8, max= 72, message = "la contraseña no puede ser menor de 8 caracteres")
     private String password;
 
     public String getUser() {

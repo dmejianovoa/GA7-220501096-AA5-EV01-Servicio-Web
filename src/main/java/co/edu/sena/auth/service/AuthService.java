@@ -50,8 +50,8 @@ public class AuthService {
      *
      * @return true si las credenciales son correctas, false en cualquier otro caso
      */
-    public boolean authentic(CredencialesDTO credencial) {
-        return userRepository.findByUser(credencial.getPassword())
+    public boolean authenticate(CredencialesDTO credencial) {
+        return userRepository.findByUser(credencial.getUser())
         // Si el usuario existe, compara la contraseña enviada contra el hash guardado
                 .map(user -> passwordEncoder.matches(
                         credencial.getPassword(), user.getPassword()))
