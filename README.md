@@ -8,7 +8,8 @@ El servicio responde con codigos:
 - 200 (OK)
 - 201 (Usuario creado)
 - 400 (Bad Request)
-- 401 (Error de autentificación)
+- 401 (Error de autenticación)
+- 409 (Conflict)
 
 ## Tecnologías
 
@@ -61,7 +62,7 @@ Un IDE como IntelliJ, también se puede correr desde la terminal.
    Copy-Item src\main\resources\application.properties.example src\main\resources\application.properties
 ```
 
-Abrir el archivo copiado y reemplazar `CAMBIAR_POR_TU_CONTRASENA` por la contraseña real de MySQL.
+Abrir el archivo copiado y reemplazar `CONTRASEÑA12345` por la contraseña real de MySQL.
 
 4. Arrancar la aplicación:
 
@@ -75,10 +76,10 @@ Cuando aparezca `Started AuthApplication`, el servicio queda en `http://localhos
 
 ## Endpoints
 
-| Método | URL | Body | Respuestas |
-|---|---|---|---|
-| POST | `/api/auth/registro` | `{"user": "...", "password": "..."}` | 201 registrado, 409 ya existe, 400 datos inválidos |
-| POST | `/api/auth/login` | `{"user": "...", "password": "..."}` | 200 autenticación satisfactoria, 401 error en la autenticación, 400 datos inválidos |
+| Método | URL                  | Body | Respuestas                                                                                    |
+|---|----------------------|---|-----------------------------------------------------------------------------------------------|
+| POST | `/api/auth/register` | `{"user": "...", "password": "..."}` | 201 registrado, 409 ya existe, 400 datos inválidos                                            |
+| POST | `/api/auth/login`    | `{"user": "...", "password": "..."}` | 200 autenticación satisfactoria, 401 error en la autenticación, 401 error en la autenticación |
 
 ## Estructura del proyecto
 
